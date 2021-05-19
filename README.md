@@ -1,6 +1,14 @@
+## Context
+1. [.Net Core Serilog – Basic](https://github.com/rtodosic/Serilog01/)
+2. [.Net Core Serilog – Configuration](https://github.com/rtodosic/Serilog02/)
+3. [.Net Core Serilog - Structured JSON output](https://github.com/rtodosic/Serilog03/)
+4. [.Net Core Serilog - Enrichers](https://github.com/rtodosic/Serilog04/)
+5. [.Net Core Serilog - Custom JSON output](https://github.com/rtodosic/Serilog05/)
+6. .Net Core Serilog - Adding Sinks
 
+This is part 6 of 6.
 
-## .Net Core Serilog – Adding Sinks
+## 6. .Net Core Serilog – Adding Sinks
 
 Serilog has quit a lot of [sinks](https://github.com/serilog/serilog/wiki/Provided-Sinks) that can use to write your logs to various places like Seq, ElasticSearch, and Application Insights.
 To write to application insights, first [setup application insights in the Azure Portal](https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource) (you will need the instrumentation key).

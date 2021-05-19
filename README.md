@@ -4,9 +4,10 @@
 
 Serilog has quit a lot of [sinks](https://github.com/serilog/serilog/wiki/Provided-Sinks) that can use to write your logs to various places like Seq, ElasticSearch, and Application Insights.
 To write to application insights, first [setup application insights in the Azure Portal](https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource) (you will need the instrumentation key).
-1.	Add “Serilog.Sinks.ApplicationInsights” NuGet package to your project.
-  
-2.	In Program.cs, add “using Serilog.Templates” to the top of the file and change the  CreateHostBuilder() method to the following (make sure you use your instrumentation key):
+1. Add “Serilog.Sinks.ApplicationInsights” NuGet package to your project.
+  ![Image alt text](Images/NuGet-Serilog-Sinks-ApplicationInsights.png?raw=true)
+
+2. In Program.cs, add “using Serilog.Templates” to the top of the file and change the  CreateHostBuilder() method to the following (make sure you use your instrumentation key):
   ```C#
   public static IHostBuilder CreateHostBuilder(string[] args) =>
       Host.CreateDefaultBuilder(args)
@@ -30,4 +31,7 @@ To write to application insights, first [setup application insights in the Azure
       );
   ```
   
-  3.	Run the application and go into your Azure Application Insights resource. Go into the “logs” section and run the following query:   
+3. Run the application and go into your Azure Application Insights resource. Go into the “logs” section and run the following query:   
+  ![Image alt text](Images/Azure-AI-Query.png?raw=true)
+
+[Serilog’s documentation on sinks](https://github.com/serilog/serilog/wiki/Provided-Sinks)

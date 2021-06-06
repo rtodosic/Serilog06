@@ -23,11 +23,11 @@ To write to application insights, first [setup application insights in the Azure
           {
               webBuilder.UseStartup<Startup>();
           })
-      .UseSerilog((hostingContect, loggerConfiguration) => loggerConfiguration
+      .UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration
           .MinimumLevel.Warning()
           .MinimumLevel.Override("Serilog06", Serilog.Events.LogEventLevel.Information)
           .MinimumLevel.Override("Microsoft.Hosting.Lifetime", Serilog.Events.LogEventLevel.Warning)
-          .ReadFrom.Configuration(hostingContect.Configuration)
+          .ReadFrom.Configuration(hostingContext.Configuration)
           .Enrich.FromLogContext()
           .Enrich.WithMachineName()
           .Enrich.WithProperty("Assembly", typeof(Program).Assembly.GetName().Name)
@@ -35,7 +35,7 @@ To write to application insights, first [setup application insights in the Azure
           {
                 InstrumentationKey = "97ebd23e-d23e-d23e-d23e-d23e97ebd23es"
           }, TelemetryConverter.Traces)
-          .WriteTo.Console(new ExpressionTemplate("{ {app_timestamp:@t, message:@m, redering:@r, level:if @l = 'Debug' then 'DEBUG' else if @l = 'Warning' then 'WARN' else if @l = 'Error' then 'ERR' else if @l = 'Fatal' then 'FTL' else @l, exception:@x, ..@p} }\n"))
+          .WriteTo.Console(new ExpressionTemplate("{ {app_timestamp:@t, message:@m, redering:@r, level:if @l = 'Debug' then 'DEBUG' else if @l = 'Information' then 'INFO' else if @l = 'Warning' then 'WARN' else if @l = 'Error' then 'ERR' else if @l = 'Fatal' then 'FTL' else @l, exception:@x, ..@p} }\n"))
       );
   ```
   
